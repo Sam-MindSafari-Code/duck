@@ -1,0 +1,205 @@
+:root{
+  --bg: #0b1020;
+  --card: rgba(255,255,255,0.06);
+  --card2: rgba(255,255,255,0.08);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.65);
+  --border: rgba(255,255,255,0.14);
+  --accent: #5eead4;
+  --accent2: #60a5fa;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 50% 0%, rgba(96,165,250,0.25), transparent 60%),
+              radial-gradient(900px 700px at 0% 70%, rgba(94,234,212,0.18), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.header {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+h1 { margin: 0; letter-spacing: -0.4px; }
+.sub { margin: 8px 0 0; color: var(--muted); }
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+  width: min(640px, 100%);
+}
+
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+.statLabel {
+  font-size: 12px;
+  color: var(--muted);
+}
+.statValue {
+  font-size: 20px;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+}
+
+.duckImage {
+  width: 140px;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.centerCard, .shopCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.duckWrap {
+  display: grid;
+  place-items: center;
+  padding: 14px 0 8px;
+}
+
+.duckBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.08s ease, filter 0.15s ease;
+  box-shadow: none;
+}
+
+.duckBtn:hover { filter: brightness(1.03); transform: translateY(-1px); }
+.duckBtn.squish { transform: scale(0.96); }
+
+
+.duckEmoji {
+  font-size: 92px;
+  transform: translateY(-2px);
+}
+
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  text-align: center;
+  max-width: 420px;
+}
+
+.toast{
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+}
+
+.miniActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button.ghost {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+button.ghost:hover { background: rgba(255,255,255,0.06); }
+
+.shopHeader h2 { margin: 0; }
+.shopSub { margin: 6px 0 14px; color: var(--muted); }
+
+.shopList { display: grid; gap: 10px; }
+
+.shopItem {
+  border: 1px solid var(--border);
+  background: var(--card2);
+  border-radius: 16px;
+  padding: 12px;
+}
+.shopItem.locked {
+  opacity: 0.58;
+  filter: grayscale(0.2);
+}
+
+.shopTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.name { font-weight: 800; }
+.desc { margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+.shopMeta { text-align: right; color: var(--muted); font-size: 13px; }
+.cost { color: rgba(255,255,255,0.82); margin-top: 4px; }
+.lockNote { margin-top: 4px; }
+
+.buyBtn{
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: linear-gradient(90deg, rgba(94,234,212,0.22), rgba(96,165,250,0.20));
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+}
+.buyBtn:disabled{
+  cursor: not-allowed;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55);
+}
+
+.footer {
+  margin-top: 14px;
+  color: var(--muted);
+  text-align: center;
+}
